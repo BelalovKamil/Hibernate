@@ -20,12 +20,11 @@ public class UserDaoHibernateImpl implements UserDao {
             lastname VARCHAR(64) NOT NULL,\s
             age TINYINT UNSIGNED NOT NULL )""";
     private final String USERS_DROP_TABLE = "DROP TABLE IF EXISTS `users`";
+    public final SessionFactory sessionFactory = Util.configureSessionFactory();
+
 
     public UserDaoHibernateImpl() {
     }
-
-    private final SessionFactory sessionFactory = Util.configureSessionFactory();
-
 
     @Override
     public void createUsersTable() {
